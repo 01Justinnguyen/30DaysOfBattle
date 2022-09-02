@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --pink-color: #e26e70;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh; /*Chiều cao của toàn màn hình*/
+    background-image: linear-gradient( 45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100% );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__button--open{
+    padding: 20px 40px;
+    border-radius: 6px;
+    font-size: 24px;
+    border: none;
+    box-shadow: 0 0 5px #aba4a4;
+}
+
+.modal__button--open:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__container{
+    width: 450px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    /*Bởi vì bị phần header nó đè lên nên ta dùng overflow để ẩn đi*/
+    animation: modalShow ease 0.6s;
+}
+
+.modal__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--pink-color);
+    padding: 15px;
+    color: #fff;
+}
+
+.modal__header i{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.modal__body{
+    padding: 15px;
+}
+
+.modal__body h2{
+    color: var(--pink-color);
+    font-weight: 600;
+}
+
+.modal__footer{
+    padding: 15px;
+    float: right;
+}
+
+.modal__btn--close{
+    padding: 10px 20px;
+    background-color: var(--pink-color);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    color: #fff;
+}
+.modal__header i,
+.modal__btn--close:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modal-hide{
+    display: none;
+}
+
+@keyframes modalShow {
+    from{
+        transform: translateY(-400px);
+        opacity: 0;
+    }to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
